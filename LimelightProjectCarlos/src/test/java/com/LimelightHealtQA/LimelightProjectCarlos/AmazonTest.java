@@ -175,9 +175,29 @@ public class AmazonTest{
         	 StarsToFloat = "";
         	 StarsFloat = "";
         	 i++;
+        	 
+        	 
+        	 
         	
         }
        
+        String reccomend = "";
+        
+        for (int n = 0; n <=4; n++ )
+        {
+        	for (int m = n +1; m <= 4; m++)
+        	{
+        	 if (rating[m] >= rating[n] && realPrice[m] <= realPrice[n] )
+        	 {
+        		 reccomend = Reccomendation[m];
+        		 reccomend.substring(0, 10);
+        	 }	
+        		
+        	}
+        }
+        System.out.println("Reccomendation :" + reccomend);
+        
+        
         
         // Sort Products by Price 
         System.out.println("\n *** First 5 results ordered by price - High to Low:  ");
@@ -202,6 +222,14 @@ public class AmazonTest{
         
         
         
+        
+        
+        
+       
+        		
+        	
+        
+        
        
         
         //Assert Products ordered by Rating - High to Low  
@@ -220,6 +248,7 @@ public class AmazonTest{
 			 			aux = rating[p];
 			 			rating[p] = rating[j];
 			 			rating[j] = aux;
+			 			
 			 		}
 		    	}
 		    	System.out.println(rating[p]);
@@ -241,7 +270,7 @@ public class AmazonTest{
         
         for (int p = 0; p <=Reccomendation.length - 1; p++)
         {
-        	if (Reccomendation[p].contains(rec))
+        	if (Reccomendation[p].contains(reccomend)  )
         	{
         		System.out.println(Reccomendation[p]);
         		String pLinkText = Reccomendation[p];
